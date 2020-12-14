@@ -1,0 +1,103 @@
+<h1 id="add-book-title" class="title">Add a Book</h1>
+<div class="mobile-hold" >
+  <div id="card-hold" class="card-box">
+    <mat-card class="card-modile">
+      <mat-card-content style="font-size: 3vh; line-height: 1.5;">
+        <form style="display: flex; flex-direction: column;" class="example-form" [formGroup]="newBookInfo">
+          <label>Title</label>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="" formControlName="title">
+          </mat-form-field>
+          <label>Author</label>
+          <mat-form-field class="example-full-width">
+              <input matInput placeholder="" formControlName="author">
+          </mat-form-field>
+          <label>Is the Book a Part of a Series?</label>
+          <mat-radio-group style="display: flex;" aria-label="Select an option" formControlName="part_of_series">
+            <mat-radio-button value="Yes">Yes</mat-radio-button>
+            <mat-radio-button style="margin-left: 30px;" value="No">No</mat-radio-button>
+          </mat-radio-group>
+          <br>
+          <label>Next Book in the Series</label>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="" formControlName="next_book">
+          </mat-form-field>
+          <label>Intended Audience</label>
+          <mat-form-field style="margin-top: 12px;" class="example-full-width">
+            <mat-select [(ngModel)]="selectedValue" name="intended-audience" formControlName="intened_audience">
+              <mat-option *ngFor="let audience of audiences" [value]="audience.value">
+                {{ audience.value }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </form>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card id="bot-card" class="card-modile">
+      <mat-card-content style="height: 100%; font-size: 3vh; line-height: 1.5;" [formGroup]="newBookInfo">
+        <label>Genre</label>
+          <div id="check-box-mobile" class="example-section">
+            <div class="check-hold">
+              <mat-checkbox class="example-margin">Action and</mat-checkbox>
+              <span style="margin-left: 32px;">Adventure</span>
+              <mat-checkbox class="example-margin" formControlName="genre">Classic</mat-checkbox>
+              <mat-checkbox class="example-margin" formControlName="genre">Comic Book</mat-checkbox>
+              <mat-checkbox class="example-margin" formControlName="genre">Graphic Novel</mat-checkbox>
+              <mat-checkbox class="example-margin" formControlName="genre">Mystery</mat-checkbox>
+            </div>
+            <div class="check-hold">
+              <mat-checkbox class="example-margin" formControlName="genre">Fantasy</mat-checkbox>
+              <mat-checkbox class="example-margin" formControlName="genre">Historical Fiction</mat-checkbox>
+              <mat-checkbox class="example-margin" formControlName="genre">Horror</mat-checkbox>
+              <mat-checkbox class="example-margin" formControlName="genre">Romance</mat-checkbox>
+              <mat-checkbox class="example-margin" formControlName="genre">Science Fiction</mat-checkbox>
+            </div>
+            <div class="check-hold">
+              <mat-checkbox class="example-margin" formControlName="genre">Short Story</mat-checkbox>
+              <mat-checkbox class="example-margin" formControlName="genre">Thriller</mat-checkbox>
+              <mat-checkbox class="example-margin" formControlName="genre">Biography</mat-checkbox>
+              <mat-checkbox class="example-margin" formControlName="genre">Autobiography</mat-checkbox>
+              <mat-checkbox class="example-margin" formControlName="genre">Nonfiction</mat-checkbox>
+            </div>
+          </div>
+          <br>
+          <div>
+            <label>Cover Images</label>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Main Cover Image" formControlName="cover_picture">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Alternate Cover Image" formControlName="alt_cover1">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Alternate Cover Image" formControlName="alt_cover2">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Alternate Cover Image" formControlName="alt_cover3">
+            </mat-form-field>
+          </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="card-box" [formGroup]="newBookInfo">
+    <mat-card id="mobile-card-bot" class="mat-card-bot">
+      <mat-card-content style="font-size: 3vh; line-height: 1.5;">
+        <mat-form-field style="width: 100%" appearance="fill">
+          <mat-label>Short Summery</mat-label>
+          <textarea matInput rows="8" style="resize: none;" formControlName="summary"></textarea>
+        </mat-form-field>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <br>
+  <div class="btn-hold">
+    <button class="mob-btn" mat-raised-button (click)="addNewBook()">Submit</button>
+    <button id="right-btn" class="mob-btn right-btn" (click)="clearForm()" mat-raised-button>Clear Form</button>
+  </div>
+  <br>
+  <br>
+</div>
+
+

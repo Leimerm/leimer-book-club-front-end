@@ -1,0 +1,26 @@
+<body>
+  <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+    <mat-toolbar class="example-toolbar">
+      <mat-icon (click)="snav.toggle()">menu</mat-icon>
+      <h1 id="title" class="example-app-name nav-title">Book Club</h1>
+    </mat-toolbar>
+
+    <mat-sidenav-container class="example-sidenav-container"
+                           [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+      <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                   [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+        <mat-nav-list>
+          <h2 style="padding-top: 6%;"><a routerLink="book-list">Veiw Library</a></h2>
+          <h2><a routerLink="add-book">Add Book</a></h2>
+          <h2><a>My Reading List</a></h2>
+          <h2><a>Login</a></h2>
+        </mat-nav-list>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+</body>
+
+

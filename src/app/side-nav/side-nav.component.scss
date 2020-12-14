@@ -1,0 +1,109 @@
+mat-toolbar {
+  background-color: DarkSeaGreen;
+  box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),
+  0px 4px 5px 0px rgba(0,0,0,0.14),
+  0px 1px 10px 0px rgba(0,0,0,0.12);
+  display: flex;
+  mat-icon {
+    font-size: 3.25vh;
+    align-content: center;
+  }
+  .nav-title {
+    display: flex;
+    font-size: 4vh;
+    font-weight: bold;
+    align-content: center;
+    padding-bottom: 1%;
+  }
+  .input-box {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  input {
+    background: transparent;
+    height: 4vh;
+    font-size: 1.25em;
+    border-top: none;
+    border-right: none;
+    border-bottom: solid black thin;
+    border-left: solid black thin;
+    color: black;
+    padding-left: 0.5%;
+  }
+}
+
+mat-sidenav {
+  background-color: lightgreen;
+  box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),
+  0px 4px 5px 0px rgba(0,0,0,0.14),
+  0px 1px 10px 0px rgba(0,0,0,0.12);
+  padding: 0 2%;
+}
+
+mat-sidenav-content {
+  padding: 0 5%;
+}
+
+h2 {
+  font-size: 3vh;
+  border-bottom: solid black;
+  padding-bottom: 10%;
+}
+
+button {
+  border-radius: 5px;
+  background-color: lightgreen;
+  border: solid darkgreen;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-family: Solway, Arial, sans-serif;
+}
+
+.example-is-mobile .example-toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+}
+
+h1.example-app-name {
+  margin-left: 15px;
+}
+
+.example-sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+}
+
+.example-is-mobile .example-sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+     `<body>` to be our scrolling element for mobile layouts. */
+  flex: 1 0 auto;
+}
+
+@media screen and (max-width: 800px) {
+  #title {
+    padding-top: 0%;
+    padding-bottom: 0%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  input {
+    display: none;
+  }
+
+  #title {
+    padding-top: 3%;
+    padding-bottom: 0%;
+  }
+}

@@ -1,0 +1,78 @@
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+       Search Library
+      </mat-panel-title>
+      <mat-panel-description>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <br>
+    <div id="mobile-basic-search" class="basic-search">
+      <div id="mobile-search-box1" class="search-box">
+        <h2>Title</h2>
+        <mat-form-field id="title-input" class="search-input">
+          <input matInput placeholder="">
+        </mat-form-field>
+      </div>
+      <div id="mobile-search-box2" class="search-box">
+        <h2 id="mobile-author" class="margin-left">Author</h2>
+        <mat-form-field id="author-input" class="search-input left-margin">
+          <input matInput placeholder="">
+        </mat-form-field>
+      </div>
+
+    </div>
+    <div class="advanced-search">
+      <h1 style="font-weight: 450;">Advanced Search</h1>
+      <h2>Genre</h2>
+      <div id="check-box-mobile" class="genre-hold">
+        <div class="check-hold">
+          <mat-checkbox class="example-margin">Action and Adventure</mat-checkbox>
+          <mat-checkbox class="example-margin">Classic</mat-checkbox>
+          <mat-checkbox class="example-margin">Comic Book</mat-checkbox>
+        </div>
+        <div class="check-hold">
+          <mat-checkbox class="example-margin">Graphic Novel</mat-checkbox>
+          <mat-checkbox class="example-margin">Mystery</mat-checkbox>
+          <mat-checkbox class="example-margin">Fantasy</mat-checkbox>
+        </div>
+        <div class="check-hold">
+          <mat-checkbox class="example-margin">Historical Fiction</mat-checkbox>
+          <mat-checkbox class="example-margin">Horror</mat-checkbox>
+          <mat-checkbox class="example-margin">Romance</mat-checkbox>
+        </div>
+        <div class="check-hold">
+          <mat-checkbox class="example-margin">Science Fiction</mat-checkbox>
+          <mat-checkbox class="example-margin">Short Story</mat-checkbox>
+          <mat-checkbox class="example-margin">Thriller</mat-checkbox>
+        </div>
+        <div class="check-hold">
+          <mat-checkbox class="example-margin">Biography</mat-checkbox>
+          <mat-checkbox class="example-margin">Autobiography</mat-checkbox>
+          <mat-checkbox class="example-margin">Nonfiction</mat-checkbox>
+        </div>
+      </div>
+      <br>
+      <div id="series-audience-hold-mobile"class="series-audience-hold">
+        <div>
+          <h2>Part of a Series</h2>
+          <mat-radio-group style="display: flex;" aria-label="Select an option">
+            <mat-radio-button value="Yes">Yes</mat-radio-button>
+            <mat-radio-button style="margin-left: 30px;" value="No">No</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div id="aud-mobile" class="left-margin search-box-bot">
+          <h2>Intended Audience</h2>
+          <mat-form-field style="border-top: 0 transparent" class="example-full-width">
+            <mat-select [(ngModel)]="selectedValue" name="intended-audience">
+              <mat-option *ngFor="let audience of audiences" [value]="audience.value">
+                {{ audience.value }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+body {
+  font-family: Solway, Arial, sans-serif !important;
+  margin: 0;
+}
+.basic-container {
+  padding: 30px;
+}
+.version-info {
+  font-size: 8pt;
+  float: right;
+  margin: 8px;
+}
+
+.mat-h1, .mat-headline, .mat-h2, .mat-typography h1, h2, .mat-title, .mat-typography, h4 {
+  font-family: Solway, Arial, sans-serif !important;
+  letter-spacing: normal;
+  margin: 2% 0 16px;
+}
+
+.mat-card, .mat-raised-button, mat-form-field, mat-checkbox, mat-expansion-panel-header, h3 {
+  font-family: Solway, Arial, sans-serif !important;
+  letter-spacing: normal;
+}
+
+.mat-form-field-inflix {
+  padding: 0;
+  border-top: 0px;
+}
+
+:host ::ng-deep .mat-form-field-inflix{
+  margin-bottom: -1.25em;
+  padding: 0;
+  border-top: solid black;
+}
