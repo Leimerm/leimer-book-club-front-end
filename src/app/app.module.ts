@@ -19,7 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { BookListComponent } from 'src/app/book-list/book-list.component';
-import { BookComponent } from 'src/app/book/book.component';
+import { BookComponent } from 'src/app/book-list/book/book.component';
 import { AddBookComponent } from 'src/app/add-book/add-book.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdvancedSearchComponent } from './advanced-search/advanced-search.component';

@@ -11,20 +11,20 @@ export class Book {
     alt_cover1: string
     alt_cover2: string
     alt_cover3: string
-  constructor(
-    id: number,
-    title: string,
-    author: string,
-    genre: string,
-    intended_audience: string,
-    part_of_series: string,
-    next_book: string,
-    rating: number,
-    cover_picture: string,
-    alt_cover1: string,
-    alt_cover2: string,
-    alt_cover3: string
-  ) {
+  constructor({
+    id = null,
+    title = "",
+    author = "",
+    genre = "",
+    intended_audience = "",
+    part_of_series = "",
+    next_book = "",
+    rating = null,
+    cover_picture = "",
+    alt_cover1 = "",
+    alt_cover2 = "",
+    alt_cover3 = ""
+  }) {
     this.id = id
     this.title = title
     this.author = author

@@ -34,12 +34,17 @@
   width: 100%;
 }
 
-.check-hold {
+.radio-hold {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
-  font-size: 2.5vh;
+  flex-wrap: wrap;
+  font-size: 2.25vh;
+  height: 200px;
 }
+
+// .pic-hold {
+//   max-height: 60%;
+// }
 
 button {
   font-size: 2.5vh;
@@ -82,12 +87,14 @@ mat-card {
   }
   #bot-card {
     margin-top: 20px;
+    width: 100%;
   }
   #mobile-card-bot {
     width: 100%;
   }
-  #check-box-mobile {
+  #radio-genre-hold-mobile {
     flex-direction: column;
+    height: 325px;
   }
   .btn-hold {
     width: 100%;
@@ -101,6 +108,9 @@ mat-card {
   #right-btn {
     margin-left: 0;
     margin-top: 20px
+  }
+  .pic-hold {
+    margin-top: 20px;
   }
 }
 
@@ -119,12 +129,14 @@ mat-card {
   }
   #bot-card {
     margin-top: 20px;
+    width: 100%;
   }
   #mobile-card-bot {
     width: 100%;
   }
-  #check-box-mobile {
+  #radio-genre-hold-mobile {
     flex-direction: column;
+    height: 100%;
   }
   .btn-hold {
     width: 100%;
@@ -138,6 +150,9 @@ mat-card {
   #right-btn {
     margin-left: 0;
     margin-top: 20px
+  }
+  .pic-hold {
+    margin-top: 20px;
   }
 }
 
