@@ -1,28 +1,25 @@
-<div>
-  <h1 id="book-title" class="title" >{{book.title}}</h1>
-  <div id="single-book-id" class="single-book-hold">
-    <img id="book-img" src="https://images-na.ssl-images-amazon.com/images/I/41tRcihNsxL._SX322_BO1,204,203,200_.jpg">
+
+    <h1 id="book-title" class="title">{{book.title}}</h1>
+    <div id="single-book-id" class="single-book-hold">
+    <img id="book-img" src="{{book.cover_picture}}">
     <div id="book-info-id" class="book-info">
         <h4>Author: <span style="font-size: 2.5vh;">{{book.author}}</span></h4>
-        <h4>Genre: <span style="font-size: 2.5vh;">Fantasy</span></h4>
-        <h4>Intended Audience: <span style="font-size: 2.5vh;">Adult</span></h4>
-        <h4>Part of a Series: <span style="font-size: 2.5vh;">Yes</span></h4>
-        <h4>Next Book: <span style="font-size: 2.5vh;">Mistborn: The Well of Ascension</span></h4>
-        <h4>Rating: <span style="font-size: 2.5vh;">4/5</span></h4>
-        <h4>Summery: <span style="font-size: 2.5vh;">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          Excepteur sint occaecat cupidatat non proident,
-          sunt in culpa qui officia deserunt mollit anim id est laborum.</span></h4>
+        <h4>Genre: <span style="font-size: 2.5vh;">{{book.genre}}</span></h4>
+        <h4>Intended Audience: <span style="font-size: 2.5vh;">{{book.intened_audience}}</span></h4>
+        <h4>Part of a Series: <span style="font-size: 2.5vh;">{{book.part_of_series}}</span></h4>
+        <div *ngIf ="book.next_book">
+          <h4>Next Book: <span style="font-size: 2.5vh;"> {{book.next_book}}</span></h4>
+        </div>
+        <h4>Rating: <span style="font-size: 2.5vh;">{{book.rating}}/5</span></h4>
+        <h4 id="summary-mobile-hold" class="summary-hold">Summery:<span class="summary" style="font-size: 2.5vh; ">{{book.summary}}</span></h4>
     </div>
     <div id="btn-hold-id" class="btn-hold" style="display: flex; flex-direction: column;">
-      <div>
+      <div *ngIf="book.alt_cover1">
         <h3 style="font-size: 3vh;  font-weight: bold;">Alturnative Cover Art</h3>
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
-          <img class="alt-img" src="https://images-na.ssl-images-amazon.com/images/I/91VZMbqbuZL.jpg">
-          <img class="alt-img" src="https://images-na.ssl-images-amazon.com/images/I/71SOXvN3H8L.jpg">
-          <img class="alt-img" src="https://m.media-amazon.com/images/I/51fqvtcN3xL.jpg">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-around;" >
+          <img class="alt-img" src={{book.alt_cover1}}>
+          <img class="alt-img" src={{book.alt_cover2}}>
+          <img class="alt-img" src={{book.alt_cover3}}>
         </div>
       </div>
       <br>
@@ -30,14 +27,16 @@
         <button class="mobile-btn" mat-raised-button>Write Reveiw</button>
       </div>
       <div style="margin-top: 15px;">
-        <button class="mobile-btn" mat-raised-button>Edit Book</button>
+        <button class="mobile-btn" mat-raised-button (click)="routeToEditBook(book.id)">Edit Book</button>
       </div>
       <div style="margin-top: 15px;">
         <button class="mobile-btn" mat-raised-button>Add to Reading List</button>
       </div>
+      <div style="margin-top: 15px;">
+        <button class="mobile-btn" mat-raised-button (click)="openDialog()">Delete Book</button>
+      </div>
     </div>
   </div>
-</div>
 <br>
 <hr>
 <br>

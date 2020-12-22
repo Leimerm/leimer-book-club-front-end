@@ -8,11 +8,13 @@ import { Book } from '../model/book';
   providedIn: 'root'
 })
 export class BookService {
+  book: Book;
   private bookApi: string;
   constructor(private http: HttpClient) {
     this.bookApi = `${environment.apiUrl}`
    }
 
+  selectedBook: BehaviorSubject<Book> = new BehaviorSubject<Book>(undefined);
 
   addBook(book: Book) {
     return this.http.post(`${this.bookApi}/books`, book)
@@ -22,7 +24,20 @@ export class BookService {
     return this.http.get<Book>(`${this.bookApi}/books`)
   }
 
-  getOneBook(book: Book): Observable<Book> {
-    return this.http.get<Book>(`${this.bookApi}/books/${book.id}`)
+  getOneBook(params): Observable<any> {
+    return this.http.get<Book>(`${this.bookApi}/books/${params.id}`)
   }
+
+  getBook(id: number): Observable<Book> {
+    return this.http.get<Book>(`${this.bookApi}/books/${id}`)
+  }
+
+  deleteBook(id: number): Observable<Book> {
+    return this.http.delete<Book>(`${this.bookApi}/books/${id}`)
+  }
+
+  updateBook(params){
+    return this.http.patch<Book>(`${this.bookApi}/books/${params.id}`, params)
+  }
+
 }

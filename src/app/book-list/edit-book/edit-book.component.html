@@ -1,0 +1,85 @@
+<h1 id="book-title" class="title">Edit:  {{book.title}}</h1>
+<div class="mobile-hold" >
+  <div id="card-hold" class="card-box">
+    <mat-card class="card-modile">
+      <mat-card-content style="font-size: 2.5vh; line-height: 1.5;">
+        <form style="display: flex; flex-direction: column;" class="example-form" [formGroup]="editBookInfo">
+          <label style="font-weight: bold;">Title</label>
+          <mat-form-field class="example-full-width">
+            <input matInput value="{{book.title}}" formControlName="title">
+          </mat-form-field>
+          <label style="font-weight: bold;">Author</label>
+          <mat-form-field class="example-full-width">
+              <input matInput value="{{book.author}}" formControlName="author">
+          </mat-form-field>
+          <label style="font-weight: bold;">Is the Book a Part of a Series?</label>
+          <mat-radio-group style="display: flex;" aria-label="Select an option" formControlName="part_of_series">
+            <mat-radio-button value="Yes">Yes</mat-radio-button>
+            <mat-radio-button style="margin-left: 30px;" value="No">No</mat-radio-button>
+          </mat-radio-group>
+          <br>
+          <label style="font-weight: bold;">Next Book in the Series</label>
+          <mat-form-field class="example-full-width">
+            <input matInput [value]="checkNextBook()" formControlName="next_book">
+          </mat-form-field>
+          <label style="font-weight: bold;">Intended Audience</label>
+          <mat-form-field style="margin-top: 12px;" class="example-full-width" [formGroup]="editBookInfo">
+            <mat-select value="{{book.intened_audience}}"[(ngModel)]="selectedValue" name="intended-audience" formControlName="intened_audience">
+              <mat-option *ngFor="let audience of audiences" [value]="audience.value" >
+                {{ audience.value }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </form>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card id="bot-card" class="radio-modile">
+      <mat-card-content style="height: 100%; font-size: 2.5vh; line-height: 1.5;">
+        <div class="radio-genre-hold">
+          <label style="font-weight: bold;">Genre</label>
+          <mat-form-field style="margin-top: 12px;" class="example-full-width" [formGroup]="editBookInfo">
+            <mat-select value="{{book.genre}}" [(ngModel)]="selectedValue2" name="genre" formControlName="genre">
+              <mat-option *ngFor="let genre of genres" [value]="genre.value" >
+                {{ genre.value }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+          <div class="pic-hold" [formGroup]="editBookInfo">
+            <label style="font-weight: bold;">Cover Images</label>
+            <mat-form-field class="example-full-width">
+              <input id="main-cover"matInput placeholder="Main Cover Image: {{book.cover_picture}}" formControlName="cover_picture">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput [placeholder]="'Alternate Cover Image: ' + checkAltCover1()" formControlName="alt_cover1">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput [placeholder]="'Alternate Cover Image: ' + checkAltCover2()" formControlName="alt_cover2">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput [placeholder]="'Alternate Cover Image: ' + checkAltCover3()" formControlName="alt_cover3">
+            </mat-form-field>
+          </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="card-box" [formGroup]="editBookInfo">
+    <mat-card id="mobile-card-bot" class="mat-card-bot">
+      <mat-card-content style="font-size: 2.5vh; line-height: 1.5;">
+        <label style="font-weight: bold;">Short Summary</label>
+        <mat-form-field style="width: 100%" appearance="fill">
+          <textarea matInput rows="8" value="{{book.summary}}" style="resize: none;" formControlName="summary"></textarea>
+        </mat-form-field>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <br>
+  <div class="btn-hold">
+    <button class="mob-btn" mat-raised-button (click)="editBook()">Submit</button>
+  </div>
+  <br>
+  <br>
+</div>
+
+

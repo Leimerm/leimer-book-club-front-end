@@ -9,25 +9,41 @@
     </mat-expansion-panel-header>
     <br>
     <div id="mobile-basic-search" class="basic-search">
-      <div id="mobile-search-box1" class="search-box">
+      <div id="mobile-search-box1" class="search-box" [formGroup]="searchInfo">
         <h2>Title</h2>
         <mat-form-field id="title-input" class="search-input">
-          <input matInput placeholder="">
+          <input matInput placeholder="" formControlName="title">
         </mat-form-field>
       </div>
-      <div id="mobile-search-box2" class="search-box">
-        <h2 id="mobile-author" class="margin-left">Author</h2>
-        <mat-form-field id="author-input" class="search-input left-margin">
-          <input matInput placeholder="">
+      <div id="mobile-search-box2" class="search-box left-margin" [formGroup]="searchInfo">
+        <h2 id="mobile-author" class="">Author</h2>
+        <mat-form-field id="author-input" class="search-input">
+          <input matInput placeholder="" formControlName="author">
         </mat-form-field>
       </div>
-
     </div>
     <div class="advanced-search">
       <h1 style="font-weight: 450;">Advanced Search</h1>
       <h2>Genre</h2>
-      <div id="check-box-mobile" class="genre-hold">
-        <div class="check-hold">
+      <div id="check-box-mobile" class="genre-hold" [formGroup]="searchInfo">
+        <mat-radio-group id="radio-genre-hold-mobile" class="radio-hold" aria-label="Select an option" formControlName="genre">
+          <mat-radio-button value="Adventure">Adventure</mat-radio-button>
+          <mat-radio-button value="Classic">Classic</mat-radio-button>
+          <mat-radio-button value="Comic Book">Comic Book</mat-radio-button>
+          <mat-radio-button value="Graphic Novel">Graphic Novel</mat-radio-button>
+          <mat-radio-button value="Mystery">Mystery</mat-radio-button>
+          <mat-radio-button value="Fantasy">Fantasy</mat-radio-button>
+          <mat-radio-button value="Historical Fiction">Historical Fiction</mat-radio-button>
+          <mat-radio-button value="Horror">Horror</mat-radio-button>
+          <mat-radio-button value="Romance">Romance</mat-radio-button>
+          <mat-radio-button value="Romance">Science Fiction</mat-radio-button>
+          <mat-radio-button value="Short Story">Short Story</mat-radio-button>
+          <mat-radio-button value="Thriller">Thriller</mat-radio-button>
+          <mat-radio-button value="Biography">Biography</mat-radio-button>
+          <mat-radio-button value="Autobiography">Autobiography</mat-radio-button>
+          <mat-radio-button value="Nonfiction">Nonfiction</mat-radio-button>
+        </mat-radio-group>
+        <!-- <div class="check-hold">
           <mat-checkbox class="example-margin">Action and Adventure</mat-checkbox>
           <mat-checkbox class="example-margin">Classic</mat-checkbox>
           <mat-checkbox class="example-margin">Comic Book</mat-checkbox>
@@ -51,28 +67,39 @@
           <mat-checkbox class="example-margin">Biography</mat-checkbox>
           <mat-checkbox class="example-margin">Autobiography</mat-checkbox>
           <mat-checkbox class="example-margin">Nonfiction</mat-checkbox>
-        </div>
+        </div> -->
       </div>
       <br>
       <div id="series-audience-hold-mobile"class="series-audience-hold">
-        <div>
-          <h2>Part of a Series</h2>
-          <mat-radio-group style="display: flex;" aria-label="Select an option">
-            <mat-radio-button value="Yes">Yes</mat-radio-button>
-            <mat-radio-button style="margin-left: 30px;" value="No">No</mat-radio-button>
-          </mat-radio-group>
+        <div id="btn-group-id" class="btn-grouping">
+          <div [formGroup]="searchInfo">
+            <h2>Part of a Series</h2>
+            <mat-radio-group style="display: flex;" aria-label="Select an option" formControlName="part_of_series">
+              <mat-radio-button value="Yes">Yes</mat-radio-button>
+              <mat-radio-button style="margin-left: 30px;" value="No">No</mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div id="aud-mobile" class="left-margin search-box-bot">
+            <h2>Intended Audience</h2>
+            <mat-form-field style="border-top: 0 transparent" class="example-full-width" [formGroup]="searchInfo">
+              <mat-select [(ngModel)]="selectedValue" name="intended-audience" formControlName="intened_audience">
+                <mat-option *ngFor="let audience of audiences" [value]="audience.value">
+                  {{ audience.value }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
         </div>
-        <div id="aud-mobile" class="left-margin search-box-bot">
-          <h2>Intended Audience</h2>
-          <mat-form-field style="border-top: 0 transparent" class="example-full-width">
-            <mat-select [(ngModel)]="selectedValue" name="intended-audience">
-              <mat-option *ngFor="let audience of audiences" [value]="audience.value">
-                {{ audience.value }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
+        <div class="btn-hold mobile-btn">
+          <div style="width: 100%">
+            <button mat-raised-button class="mobile-btn" (click)="clearForm()">Clear</button>
+          </div>
+          <div style="width: 100%" class="left-margin">
+            <button mat-raised-button class="mobile-btn">Search</button>
+          </div>
         </div>
       </div>
     </div>
+
   </mat-expansion-panel>
 </mat-accordion>

@@ -3,6 +3,14 @@
     <mat-toolbar class="example-toolbar">
       <mat-icon (click)="snav.toggle()">menu</mat-icon>
       <h1 id="title" class="example-app-name nav-title">Book Club</h1>
+      <div style="width: 100%; display: flex; justify-content: flex-end;">
+        <button class="log" mat-button [matMenuTriggerFor]="menu">Login</button>
+          <mat-menu #menu="matMenu">
+            <div mat-menu-item><input></div>
+            <div mat-menu-item>Item 2</div>
+          </mat-menu>
+      </div>
+
     </mat-toolbar>
 
     <mat-sidenav-container class="example-sidenav-container"
@@ -12,7 +20,7 @@
         <mat-nav-list>
           <h2 style="padding-top: 6%;"><a routerLink="book-list">Veiw Library</a></h2>
           <h2><a routerLink="add-book">Add Book</a></h2>
-          <h2><a>My Reading List</a></h2>
+          <h2><a routerLink="reading-list">My Reading List</a></h2>
           <h2><a>Login</a></h2>
         </mat-nav-list>
       </mat-sidenav>

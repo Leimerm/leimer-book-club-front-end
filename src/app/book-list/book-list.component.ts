@@ -25,6 +25,14 @@ export class BookListComponent implements OnInit {
     this.bookService.getBookData().subscribe(x => {this.bookinfo = x})
   }
 
+  routeToViewBook(id: number) {
+    this.router.navigate([`/book/${id}`])
+  }
+
+  selectedBook(book:Book) {
+    this.bookService.selectedBook.next(book);
+  }
+
   checkPic(bookinfo) {
     if(bookinfo.cover_picture) {
       return bookinfo.cover_picture
@@ -32,11 +40,6 @@ export class BookListComponent implements OnInit {
       return "https://d3525k1ryd2155.cloudfront.net/h/050/337/953337050.0.m.jpg"
     }
   }
-
-  routeToViewBook(id: number) {
-    this.router.navigate([`/book/${id}`])
-  }
-
 }
 
 

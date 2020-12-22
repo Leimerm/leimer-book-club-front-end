@@ -10,7 +10,7 @@
             <mat-card-title class="mat-title">{{book.title}}</mat-card-title>
             <mat-card-subtitle>{{book.author}}</mat-card-subtitle>
           </mat-card-header>
-          <a (click)="routeToViewBook(book.id)"><img mat-card-image [src]="checkPic(book)"></a>
+          <a (click)="routeToViewBook(book.id) && selectedBook(book.id)"><img mat-card-image [src]="checkPic(book)"></a>
         </mat-card>
     </div>
 

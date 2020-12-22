@@ -16,6 +16,10 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { HttpClientModule } from '@angular/common/http';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { BookListComponent } from 'src/app/book-list/book-list.component';
@@ -23,6 +27,9 @@ import { BookComponent } from 'src/app/book-list/book/book.component';
 import { AddBookComponent } from 'src/app/add-book/add-book.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdvancedSearchComponent } from './advanced-search/advanced-search.component';
+import { ReadingListComponent } from './reading-list/reading-list.component';
+import { EditBookComponent } from './book-list/edit-book/edit-book.component';
+import { WarningModalComponent } from './modals/warning-modal/warning-modal.component';
 
 
 @NgModule({
@@ -32,7 +39,10 @@ import { AdvancedSearchComponent } from './advanced-search/advanced-search.compo
     BookListComponent,
     BookComponent,
     AddBookComponent,
-    AdvancedSearchComponent
+    AdvancedSearchComponent,
+    ReadingListComponent,
+    EditBookComponent,
+    WarningModalComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +61,11 @@ import { AdvancedSearchComponent } from './advanced-search/advanced-search.compo
     MatRadioModule,
     MatSelectModule,
     MatExpansionModule,
-    HttpClientModule
+    HttpClientModule,
+    DragDropModule,
+    MatMenuModule,
+    MatDialogModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

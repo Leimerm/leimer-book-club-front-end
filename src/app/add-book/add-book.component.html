@@ -23,9 +23,9 @@
             <input matInput placeholder="" formControlName="next_book">
           </mat-form-field>
           <label style="font-weight: bold;">Intended Audience</label>
-          <mat-form-field style="margin-top: 12px;" class="example-full-width">
+          <mat-form-field style="margin-top: 12px;" class="example-full-width" [formGroup]="newBookInfo">
             <mat-select [(ngModel)]="selectedValue" name="intended-audience" formControlName="intened_audience">
-              <mat-option *ngFor="let audience of audiences" [value]="audience.value">
+              <mat-option *ngFor="let audience of audiences" [value]="audience.value" >
                 {{ audience.value }}
               </mat-option>
             </mat-select>
@@ -35,9 +35,10 @@
     </mat-card>
 
     <mat-card id="bot-card" class="radio-modile">
-      <mat-card-content style="height: 100%; font-size: 2.5vh; line-height: 1.5;" [formGroup]="newBookInfo">
+      <mat-card-content style="height: 100%; font-size: 2.5vh; line-height: 1.5;">
         <div class="radio-genre-hold">
           <label style="font-weight: bold;">Genre</label>
+            <form [formGroup]="newBookInfo">
               <mat-radio-group id="radio-genre-hold-mobile" class="radio-hold" aria-label="Select an option" formControlName="genre">
                 <mat-radio-button value="Adventure">Adventure</mat-radio-button>
                 <mat-radio-button value="Classic">Classic</mat-radio-button>
@@ -55,8 +56,9 @@
                 <mat-radio-button value="Autobiography">Autobiography</mat-radio-button>
                 <mat-radio-button value="Nonfiction">Nonfiction</mat-radio-button>
               </mat-radio-group>
+            </form>
         </div>
-          <div class="pic-hold">
+          <div class="pic-hold" [formGroup]="newBookInfo">
             <label style="font-weight: bold;">Cover Images</label>
             <mat-form-field class="example-full-width">
               <input matInput placeholder="Main Cover Image" formControlName="cover_picture">

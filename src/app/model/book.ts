@@ -3,11 +3,12 @@ export class Book {
     title: string
     author: string
     genre: string
-    intended_audience: string
+    intened_audience: string
     part_of_series: string
     next_book: string
     rating: number
     cover_picture: string
+    summary: string
     alt_cover1: string
     alt_cover2: string
     alt_cover3: string
@@ -16,11 +17,12 @@ export class Book {
     title = "",
     author = "",
     genre = "",
-    intended_audience = "",
+    intened_audience = "",
     part_of_series = "",
     next_book = "",
     rating = null,
     cover_picture = "",
+    summary = "",
     alt_cover1 = "",
     alt_cover2 = "",
     alt_cover3 = ""
@@ -29,11 +31,12 @@ export class Book {
     this.title = title
     this.author = author
     this.genre = genre
-    this.intended_audience = intended_audience
+    this.intened_audience = intened_audience
     this.part_of_series = part_of_series
     this.next_book = next_book
     this.rating = rating
     this.cover_picture = cover_picture
+    this.summary = summary
     this.alt_cover1 = alt_cover1
     this.alt_cover2 = alt_cover2
     this.alt_cover3 = alt_cover3

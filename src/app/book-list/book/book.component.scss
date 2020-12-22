@@ -22,20 +22,29 @@ img {
               0 8px 8px rgba(0,0,0,0.11),
               0 16px 16px rgba(0,0,0,0.11),
               0 32px 32px rgba(0,0,0,0.11);
-  height: 70vh;
+  height: 75vh;
   max-width: 30%;
 }
 .book-info {
-  max-width: 55%;
+  width: 55%;
   margin-left: 20px;
 }
 h4 {
   font-size: 3.5vh;
-  line-height: 1.5;
+  line-height: 1.25;
   width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+// .summary-hold {
+//   height: 45vh;
+// }
+.summary {
+  font-size: 2vh;
+  // overflow: hidden;
+  // text-overflow: ellipsis;
 }
 .btn-hold {
-  width: 20%;
   height: 100%;
   padding-left: 15px;
   .alt-img {
@@ -50,6 +59,9 @@ button {
   height: 5.5vh;
   width: 16vw;
   background-color: lightgreen;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .reveiw-btn {
@@ -85,7 +97,7 @@ mat-card {
   }
   #book-info-id {
     margin-top: 20px;
-    max-width: 100%;
+    width: 90%;
   }
   #btn-hold-id {
     width: 90%;
@@ -120,6 +132,10 @@ mat-card {
   }
   .mobile-btn {
     width: 100%;
+  }
+  #summary-mobile-hold {
+    height: 100%;
+    overflow: visible;
   }
 }
 

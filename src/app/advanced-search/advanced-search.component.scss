@@ -39,7 +39,7 @@ h2 {
 }
 .check-hold {
   display: flex;
-  font-size: 2.25vh;
+  font-size: 2vh;
   flex-direction: column;
   margin-left: 30px;
   width: 20%;
@@ -51,6 +51,7 @@ mat-radio-button {
 
 .series-audience-hold {
   display: flex;
+  justify-content: space-between;
 }
 mat-form-field {
   width: 100%;
@@ -63,6 +64,41 @@ mat-select {
 .left-margin {
   margin-left: 30px;
 }
+
+.btn-hold {
+  width: 40%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+button {
+  width: 100%;
+  background-color: lightgreen;
+  font-size: 2.25vh;
+}
+
+.btn-grouping {
+  display: flex;
+  width: 60%;
+}
+
+.radio-hold {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-size: 2.25vh;
+  height: 80px;
+  line-height: 1.5;
+  // overflow: hidden;
+  // text-overflow: ellipsis;
+}
+
+mat-radio-button {
+  margin-left: 30px;
+}
+
+
 
 @media screen and (max-width: 800px) {
   #mobile-basic-search {
@@ -84,6 +120,7 @@ mat-select {
 
   #mobile-search-box2 {
     width: 100%;
+    margin-left: 0;
   }
 
   #mobile-author {
@@ -102,6 +139,18 @@ mat-select {
     margin-left: 0;
     margin-top: 20px;
     width: 100%;
+  }
+  .mobile-btn {
+    width: 100%;
+  }
+  #btn-group-id {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  #radio-genre-hold-mobile {
+    flex-direction: column;
+    height: 100%;
   }
 }
 
@@ -125,6 +174,7 @@ mat-select {
 
   #mobile-search-box2 {
     width: 100%;
+    margin-left: 0;
   }
 
   #mobile-author {
@@ -143,5 +193,16 @@ mat-select {
     margin-left: 0;
     margin-top: 20px;
     width: 100%;
+  }
+  .mobile-btn {
+    width: 100%;
+  }
+  #btn-group-id {
+    display: flex;
+    width: 100%;
+  }
+  #radio-genre-hold-mobile {
+    flex-direction: column;
+    height: 100%;
   }
 }
