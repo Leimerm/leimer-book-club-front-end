@@ -37,7 +37,7 @@ export class BookService {
   }
 
   updateBook(params){
-    return this.http.patch<Book>(`${this.bookApi}/books/${params.id}`, params)
+    return this.http.patch<Book>(`${this.bookApi}/books/${params}`, params)
   }
 
 }

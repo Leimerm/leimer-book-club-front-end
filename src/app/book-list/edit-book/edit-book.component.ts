@@ -1,4 +1,3 @@
-import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -19,14 +18,16 @@ interface Genres {
   styleUrls: ['./edit-book.component.scss']
 })
 export class EditBookComponent implements OnInit {
-  checked = false;
-  book: Book;
 
   constructor(
     private route: ActivatedRoute,
     private bookService: BookService,
     private router: Router,
   ) { }
+
+  checked = false;
+  book: Book;
+
 
   editBookInfo: FormGroup = new FormGroup({
     title: new FormControl("", [Validators.required]),
@@ -35,7 +36,6 @@ export class EditBookComponent implements OnInit {
     intened_audience: new FormControl("", [Validators.required]),
     part_of_series: new FormControl(""),
     next_book: new FormControl(""),
-    rating: new FormControl(""),
     cover_picture: new FormControl("", [Validators.required]),
     alt_cover1: new FormControl(""),
     alt_cover2: new FormControl(""),
@@ -76,12 +76,26 @@ export class EditBookComponent implements OnInit {
 
   getBook(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.bookService.getBook(id).subscribe(book => this.book = book);
+    this.bookService.getBook(id).subscribe(book => {this.book = book
+      this.editBookInfo.controls.title.setValue(this.book.title);
+      this.editBookInfo.controls.author.setValue(this.book.author);
+      this.editBookInfo.controls.genre.setValue(this.book.genre);
+      this.editBookInfo.controls.intened_audience.setValue(this.book.intened_audience);
+      this.editBookInfo.controls.part_of_series.setValue(this.book.part_of_series);
+      this.editBookInfo.controls.next_book.setValue(this.book.next_book);
+      this.editBookInfo.controls.cover_picture.setValue(this.book.cover_picture);
+      this.editBookInfo.controls.alt_cover1.setValue(this.book.alt_cover1);
+      this.editBookInfo.controls.alt_cover2.setValue(this.book.alt_cover2);
+      this.editBookInfo.controls.alt_cover3.setValue(this.book.alt_cover3);
+      this.editBookInfo.controls.summary.setValue(this.book.summary);
+    });
   }
 
   editBook(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.bookService.updateBook(this.editBookInfo.value).subscribe(book => this.book = book);
+    this.bookService.updateBook(id).subscribe(data=>{
+      console.log(data);
+    });
     this.router.navigate([`/book/${id}`]);
   }
 

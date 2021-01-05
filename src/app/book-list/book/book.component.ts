@@ -3,8 +3,8 @@ import { Book } from '../../model/book';
 import { BookService } from '../../services/book.service';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { WarningModalComponent } from 'src/app/modals/warning-modal/warning-modal.component';
 import { MatDialog } from '@angular/material/dialog';
+import { ConfirmDeletionComponent } from 'src/app/modals/confirm-deletion/confirm-deletion.component';
 
 @Component({
   selector: 'app-book',
@@ -34,20 +34,21 @@ export class BookComponent implements OnInit {
 
   removeBook(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.bookService.deleteBook(id).subscribe(book => this.book = book);
-    this.router.navigate([`/book-list`]);
+    const confirmDialog = this.dialog.open(ConfirmDeletionComponent, {
+      data: {
+        title: 'Are you sure, you want to delete: ' + this.book.title + '?'
+      }
+    });
+    confirmDialog.afterClosed().subscribe(result => {
+      if (result === true) {
+        this.bookService.deleteBook(id).subscribe(book => this.book = book);
+        this.router.navigate([`/book-list`]);
+      }
+    });
   }
 
   routeToEditBook(id: number) {
     this.router.navigate([`/edit-book/${id}`])
-  }
-
-  openDialog() {
-    const dialogRef = this.dialog.open(WarningModalComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
   }
 
 }

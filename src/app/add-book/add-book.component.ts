@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { BookService } from '../services/book.service';
 
-import { WarningModalComponent } from '../modals/warning-modal/warning-modal.component';
-
 interface Audiences {
   value: string;
 }
@@ -48,7 +46,7 @@ export class AddBookComponent implements OnInit {
 
   addNewBook () {
     this.bookService.addBook(this.newBookInfo.value).subscribe(data=>{
-      console.log(data);
+    console.log(data);
     this.clearForm();
     })
   }

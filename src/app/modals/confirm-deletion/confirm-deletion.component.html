@@ -1,0 +1,8 @@
+<h1 mat-dialog-title style="font-weight: bold; font-size: 3vh;">{{data.title}}</h1>
+<div mat-dialog-content>
+  {{data.message}}
+</div>
+<div style="display: flex; justify-content: space-between;">
+  <button mat-raised-button value="Confirm" [mat-dialog-close]="true">Confirm</button>
+  <button mat-raised-button value="Cancel"  [mat-dialog-close]="false">Cancel</button>
+</div>

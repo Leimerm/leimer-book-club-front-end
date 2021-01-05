@@ -33,6 +33,16 @@
   width: 100%;
 }
 
+.radio-hold {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-size: 2.25vh;
+  height: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 button {
   font-size: 2.5vh;
   height: 5.5vh;

@@ -1,0 +1,83 @@
+.title {
+  display: flex;
+  justify-content: center;
+  font-size: 6vh;
+  font-weight: bold;
+  line-height: 1.25;
+}
+
+.card {
+  background-color: cornsilk;
+  padding: 1% 3%;
+}
+
+button {
+  font-size: 2.25vh;
+  height: 5.5vh;
+  width: 10vw;
+  background-color: lightgreen;
+}
+
+.btn2 {
+  margin-left: 40px;
+}
+
+.sub-create-hold {
+  width: 50%;
+}
+
+@media screen and (max-width: 800px) {
+  #create-title {
+    font-size: 5vh;
+  }
+  #create-card {
+    width: 100%;
+  }
+
+  #id-sub-create-hold {
+    width: 100%;
+  }
+
+  .btn-hold {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .mobile-btn {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .btn2 {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  #create-title {
+    font-size: 5vh;
+  }
+  #create-card {
+    width: 100%;
+  }
+
+  #id-sub-create-hold {
+    width: 100%;
+  }
+
+  .btn-hold {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .mobile-btn {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .btn2 {
+    margin-top: 20px;
+  }
+}

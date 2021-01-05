@@ -1,0 +1,21 @@
+<div class="login-modal">
+  <div mat-dialog-content>
+    <div style="font-size: 2vh; display: flex; flex-direction: column;">
+      <mat-form-field class="example-full-width">
+        <mat-label style="font-weight: bold; color: black; line-height: 1.5;">User Name</mat-label>
+        <input matInput placeholder="" formControlName="title">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label style="font-weight: bold; color: black; line-height: 1.5;">Password</mat-label>
+        <input matInput placeholder="" formControlName="title">
+      </mat-form-field>
+    </div>
+    <a style="font-size: 2vh; text-decoration: none;" href="create-account" (click)="closeLoginModal()">Create New Account</a>
+  </div>
+  <div mat-dialog-actions style="display: flex; justify-content: space-between;">
+    <button mat-raised-button mat-dialog-close>Login</button>
+    <button mat-raised-button mat-dialog-close>Close</button>
+  </div>
+  <br>
+</div>
+

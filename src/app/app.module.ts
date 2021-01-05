@@ -29,7 +29,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdvancedSearchComponent } from './advanced-search/advanced-search.component';
 import { ReadingListComponent } from './reading-list/reading-list.component';
 import { EditBookComponent } from './book-list/edit-book/edit-book.component';
-import { WarningModalComponent } from './modals/warning-modal/warning-modal.component';
+import { ConfirmDeletionComponent } from './modals/confirm-deletion/confirm-deletion.component';
+import { LoginModalComponent } from './modals/confirm-deletion/login-modal/login-modal.component';
+import { CreateAccountComponent } from './create-account/create-account.component';
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import { WarningModalComponent } from './modals/warning-modal/warning-modal.comp
     AdvancedSearchComponent,
     ReadingListComponent,
     EditBookComponent,
-    WarningModalComponent
+    ConfirmDeletionComponent,
+    LoginModalComponent,
+    CreateAccountComponent
   ],
   imports: [
     BrowserModule,
