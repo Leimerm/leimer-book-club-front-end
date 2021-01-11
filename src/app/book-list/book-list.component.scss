@@ -50,13 +50,43 @@ mat-card {
   max-width: 300px;
 }
 
+@media screen and (max-width: 800px) {
+  #list-title {
+    font-size: 5vh;
+  }
+
+  #mat-title-id {
+    width: 265px;
+  }
+
+#list {
+  justify-content: center;
+}
+
+  #card {
+    max-width: 290px;
+  }
+
+  mat-card-title {
+    font-size: 2.5vh;
+  }
+
+  #search-label {
+    font-size: 3vh;
+  }
+
+  #search-field {
+    width: 90%;
+  }
+}
+
 @media screen and (max-width: 425px) {
   #list-title {
     font-size: 5vh;
   }
 
   #mat-title-id {
-    width: 275px;
+    width: 265px;
   }
 
 #list {
