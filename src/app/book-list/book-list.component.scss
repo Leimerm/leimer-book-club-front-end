@@ -37,7 +37,7 @@ mat-card {
   }
 }
 
-.mat-title {
+mat-card-title {
   font-size: 2.2vh;
   overflow: hidden;
   white-space: nowrap;
@@ -53,6 +53,10 @@ mat-card {
 @media screen and (max-width: 425px) {
   #list-title {
     font-size: 5vh;
+  }
+
+  .mat-title {
+    width: 275px;
   }
 
 #list {
