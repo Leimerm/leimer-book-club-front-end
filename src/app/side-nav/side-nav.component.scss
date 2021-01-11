@@ -100,17 +100,16 @@ h1.example-app-name {
 
 @media screen and (max-width: 800px) {
   #title {
+    font-size: 3vh;
     padding-top: 0%;
     padding-bottom: 0%;
   }
 }
 
 @media screen and (max-width: 425px) {
-  input {
-    display: none;
-  }
 
   #title {
+    font-size: 3vh;
     padding-top: 3%;
     padding-bottom: 0%;
   }
