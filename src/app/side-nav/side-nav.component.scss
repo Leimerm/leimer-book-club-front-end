@@ -15,7 +15,6 @@ mat-toolbar {
     font-size: 4vh;
     font-weight: bold;
     align-content: center;
-    margin-top: 1%;
     margin-left: 10px;
   }
   .input-box {
@@ -101,14 +100,14 @@ h1.example-app-name {
 
 @media screen and (max-width: 800px) {
   #title {
-    padding-top: 1%;
+    padding-top: 6%;
     padding-bottom: 0%;
   }
 }
 
 @media screen and (max-width: 425px) {
   #title {
-    padding-top: 1%;
+    padding-top: 6%;
     padding-bottom: 0%;
   }
 }
