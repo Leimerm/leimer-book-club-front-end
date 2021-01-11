@@ -6,7 +6,7 @@ mat-toolbar {
   display: flex;
   height: 8vh;
   mat-icon {
-    font-size: 3.25vh;
+    font-size: 4vh;
     align-content: center;
     cursor: default;
   }
@@ -15,7 +15,7 @@ mat-toolbar {
     font-size: 4vh;
     font-weight: bold;
     align-content: center;
-    margin-left: 10px;
+    margin-left: 20px;
   }
   .input-box {
     width: 100%;
@@ -101,6 +101,7 @@ h1.example-app-name {
 @media screen and (max-width: 800px) {
   #title {
     padding-bottom: 0%;
+    margin-top: 1%;
   }
 }
 
