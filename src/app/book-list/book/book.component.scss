@@ -26,8 +26,8 @@ img {
   max-width: 30%;
 }
 .book-info {
-  width: 55%;
-  margin-left: 20px;
+  width: 50%;
+  margin-left: 25px;
 }
 h4 {
   font-size: 3.5vh;
@@ -35,19 +35,21 @@ h4 {
   width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-weight: bold;
 }
 
-.summary {
-  font-size: 2vh;
+.summary-hold {
+  margin-left: 25px;
 }
-.btn-hold {
-  height: 100%;
-  padding-left: 15px;
-  .alt-img {
-    max-width: 200px;
-    height: 22vh;
-    margin-top: 10px;
-  }
+
+.btn-hold2 {
+  justify-content: space-between;
+}
+
+.alt-img {
+  max-width: 200px;
+  height: 30vh;
+  margin-left: 30px;
 }
 
 button {
@@ -81,6 +83,7 @@ mat-card {
 @media screen and (max-width: 800px) {
   #book-title {
     font-size: 6vh;
+    margin-top: 6%;
   }
   #book-img {
     max-width: 70%;
@@ -94,20 +97,39 @@ mat-card {
   #book-info-id {
     margin-top: 20px;
     width: 90%;
+    margin-left: 0;
   }
   #btn-hold-id {
-    width: 90%;
-    display: flex;
-    justify-content: center;
+    width: 100%;
+    flex-direction: column;
   }
   .mobile-btn {
     width: 100%;
+  }
+  #summary-mobile-hold {
+    width: 95%;
+  }
+  .alt-img-hold {
+    margin-bottom: 40px;
+  }
+  #alt-img-hold-mobile {
+    margin-left: 0;
+  }
+  #alt-img1 {
+    margin-left: 0;
+  }
+  #alt-img2 {
+    margin-left: 15px;
+  }
+  #alt-img3 {
+    margin-left: 15px;
   }
 }
 
 @media screen and (max-width: 425px) {
   #book-title {
     font-size: 4vh;
+    margin-top: 6%;
   }
   #book-img {
     max-width: 100%;
@@ -124,14 +146,25 @@ mat-card {
     max-width: 100%;
   }
   #btn-hold-id {
-    width: 90%
+    width: 100%;
+    flex-direction: column;
   }
   .mobile-btn {
     width: 100%;
   }
   #summary-mobile-hold {
-    height: 100%;
-    overflow: visible;
+    width: 95%;
+    margin-left: 0;
+  }
+  .alt-img-hold {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .alt-img {
+    margin-top: 30px;
+  }
+  .alt-img-hold {
+    margin-bottom: 30px;
   }
 }
 

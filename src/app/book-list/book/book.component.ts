@@ -15,7 +15,7 @@ export class BookComponent implements OnInit {
   private subs = new Subscription;
   book: Book;
   showShortDesciption = true
-
+  mobile = false
   constructor(
     private route: ActivatedRoute,
     private bookService: BookService,
@@ -25,6 +25,9 @@ export class BookComponent implements OnInit {
 
   ngOnInit(): void {
     this.getBook()
+    if (window.screen.width === 425) { // 768px portrait
+      this.mobile = true;
+    }
   }
 
   getBook(): void {

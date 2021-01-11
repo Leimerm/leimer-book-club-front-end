@@ -3,41 +3,59 @@
     <div id="single-book-id" class="single-book-hold">
     <img id="book-img" src="{{book.cover_picture}}">
     <div id="book-info-id" class="book-info">
-        <h4>Author: <span style="font-size: 2.5vh;">{{book.author}}</span></h4>
-        <h4>Genre: <span style="font-size: 2.5vh;">{{book.genre}}</span></h4>
-        <h4>Intended Audience: <span style="font-size: 2.5vh;">{{book.intened_audience}}</span></h4>
-        <h4>Part of a Series: <span style="font-size: 2.5vh;">{{book.part_of_series}}</span></h4>
+        <h4>Author: <span style="font-weight: normal;">{{book.author}}</span></h4>
+        <h4>Genre: <span style="font-weight: normal;">{{book.genre}}</span></h4>
+        <h4>Intended Audience: <span style="font-weight: normal;">{{book.intened_audience}}</span></h4>
+        <h4>Part of a Series: <span style="font-weight: normal;">{{book.part_of_series}}</span></h4>
         <div *ngIf ="book.next_book">
-          <h4>Next Book: <span style="font-size: 2.5vh;"> {{book.next_book}}</span></h4>
+          <h4>Next Book: <span style="font-weight: normal;"> {{book.next_book}}</span></h4>
         </div>
-        <h4>Rating: <span style="font-size: 2.5vh;">{{book.rating}}/5</span></h4>
-        <h4 id="summary-mobile-hold" class="summary-hold">Summery:<span class="summary" style="font-size: 2.5vh; ">{{book.summary}}</span></h4>
+        <h4>Rating: <span style="font-weight: normal;">{{book.rating}}/5</span></h4>
+        <div>
+          <h4>Alturnative Cover Art:</h4>
+          <div id="alt-img-hold-mobile" class="alt-img-hold"*ngIf="book.alt_cover1" style="display: flex;" >
+            <img id="alt-img1" class="alt-img" src={{book.alt_cover1}}>
+            <img id="alt-img2" class="alt-img" src={{book.alt_cover2}}>
+            <img id="alt-img3" class="alt-img" src={{book.alt_cover3}}>
+          </div>
+          <div *ngIf="!book.alt_cover1" style="display: flex; flex-wrap: wrap;" >
+            <h4 style="font-weight: normal;">(No Alturnative Cover Avaible)</h4>
+          </div>
+        </div>
     </div>
-    <div id="btn-hold-id" class="btn-hold" style="display: flex; flex-direction: column;">
-      <div *ngIf="book.alt_cover1">
-        <h3 style="font-size: 3vh;  font-weight: bold;">Alturnative Cover Art</h3>
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-around;" >
-          <img class="alt-img" src={{book.alt_cover1}}>
-          <img class="alt-img" src={{book.alt_cover2}}>
-          <img class="alt-img" src={{book.alt_cover3}}>
-        </div>
-      </div>
-      <br>
+    <div id="btn-hold-id" *ngIf="mobile===false" class="btn-hold1" style="display: flex; flex-direction: column;">
       <div style="display: flex;">
         <button class="mobile-btn" mat-raised-button>Write Reveiw</button>
       </div>
-      <div style="margin-top: 15px;">
-        <button class="mobile-btn" mat-raised-button (click)="routeToEditBook(book.id)">Edit Book</button>
+      <div>
+        <button style="margin-top: 15px" class="mobile-btn" mat-raised-button (click)="routeToEditBook(book.id)">Edit Book</button>
       </div>
-      <div style="margin-top: 15px;">
-        <button class="mobile-btn" mat-raised-button>Add to Reading List</button>
+      <div>
+        <button style="margin-top: 15px" class="mobile-btn" mat-raised-button>Add to Reading List</button>
       </div>
-      <div style="margin-top: 15px;">
-        <button class="mobile-btn" mat-raised-button (click)="removeBook()">Delete Book</button>
+      <div>
+        <button style="margin-top: 15px" class="mobile-btn" mat-raised-button (click)="removeBook()">Delete Book</button>
       </div>
     </div>
   </div>
-<br>
+  <br *ngIf="mobile===false">
+  <h4 id="summary-mobile-hold" class="summary-hold">Summery: <span class="summary" style="font-weight: normal; font-size: 2.75vh; ">{{book.summary}}</span></h4>
+  <br *ngIf="mobile===true">
+  <div *ngIf="mobile===true" id="btn-hold-id" class="btn-hold2" style="display: flex;">
+    <div style="display: flex;">
+      <button class="mobile-btn" mat-raised-button>Write Reveiw</button>
+    </div>
+    <div>
+      <button style="margin-top: 15px;" class="mobile-btn" mat-raised-button (click)="routeToEditBook(book.id)">Edit Book</button>
+    </div>
+    <div>
+      <button style="margin-top: 15px;" class="mobile-btn" mat-raised-button>Add to Reading List</button>
+    </div>
+    <div>
+      <button style="margin-top: 15px;" class="mobile-btn" mat-raised-button (click)="removeBook()">Delete Book</button>
+    </div>
+  </div>
+  <br>
 <hr>
 <br>
 <div>
