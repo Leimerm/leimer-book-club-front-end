@@ -4,6 +4,7 @@ mat-toolbar {
   0px 4px 5px 0px rgba(0,0,0,0.14),
   0px 1px 10px 0px rgba(0,0,0,0.12);
   display: flex;
+  height: 8vh;
   mat-icon {
     font-size: 3.25vh;
     align-content: center;
@@ -14,7 +15,7 @@ mat-toolbar {
     font-size: 4vh;
     font-weight: bold;
     align-content: center;
-    padding-bottom: 1%;
+    margin-top: 1%;
     margin-left: 10px;
   }
   .input-box {
@@ -100,17 +101,14 @@ h1.example-app-name {
 
 @media screen and (max-width: 800px) {
   #title {
-    font-size: 3vh;
-    padding-top: 0%;
+    padding-top: 1%;
     padding-bottom: 0%;
   }
 }
 
 @media screen and (max-width: 425px) {
-
   #title {
-    font-size: 3vh;
-    padding-top: 3%;
+    padding-top: 1%;
     padding-bottom: 0%;
   }
 }
