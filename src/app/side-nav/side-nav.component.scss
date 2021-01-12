@@ -115,3 +115,12 @@ h1.example-app-name {
     margin-left: 16px;
   }
 }
+
+@media screen and (min-width: 1700px) {
+  #id-mobile {
+    height: 37px;
+  }
+  #title {
+    margin-left: 25px;
+  }
+}
