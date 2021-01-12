@@ -113,11 +113,14 @@ mat-card {
   }
 }
 
-@media screen and (min-width: 1900px) {
-  #card {
-    width: 300px;
+@media screen and (min-width: 1700px) {
+  .mobile-card {
+    max-width: 300px;
   }
-  #mat-sub-id {
+  #mat-title-id {
+    width: 275px;
+  }
+  mat-card-subtitle {
     width: 275px;
   }
 }
