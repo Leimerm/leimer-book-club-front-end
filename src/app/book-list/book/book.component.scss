@@ -41,9 +41,14 @@ h4 {
 .summary-hold {
   margin-left: 25px;
 }
+.btn-hold1{
+  display: flex;
+  flex-direction: column;
+}
 
 .btn-hold2 {
   justify-content: space-between;
+  display: none;
 }
 
 .alt-img {
@@ -99,8 +104,12 @@ mat-card {
     width: 90%;
     margin-left: 0;
   }
-  #btn-hold-id {
+  #btn-hold-id1 {
+    display: none;
+  }
+  #btn-hold-id2 {
     width: 100%;
+    display: flex;
     flex-direction: column;
   }
   .mobile-btn {
@@ -145,8 +154,12 @@ mat-card {
     margin-top: 20px;
     max-width: 100%;
   }
-  #btn-hold-id {
+  #btn-hold-id1 {
+    display: none;
+  }
+  #btn-hold-id2 {
     width: 100%;
+    display: flex;
     flex-direction: column;
   }
   .mobile-btn {

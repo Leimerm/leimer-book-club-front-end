@@ -8,7 +8,7 @@
         <mat-card id="card">
           <mat-card-header>
             <mat-card-title id="mat-title-id" class="mat-title">{{book.title}}</mat-card-title>
-            <mat-card-subtitle>{{book.author}}</mat-card-subtitle>
+            <mat-card-subtitle id="mat-sub-id">{{book.author}}</mat-card-subtitle>
           </mat-card-header>
           <div style="padding: 0px 16px;">
             <a (click)="routeToViewBook(book.id) && selectedBook(book.id)"><img mat-card-image [src]="checkPic(book)"></a>

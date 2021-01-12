@@ -112,3 +112,14 @@ mat-card {
     width: 90%;
   }
 }
+
+@media screen and (min-width: 1900px) {
+  #card {
+    width: 300px;
+  }
+  #mat-sub-id {
+    width: 275px;
+  }
+}
+
+

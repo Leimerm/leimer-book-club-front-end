@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { Book } from '../../model/book';
 import { BookService } from '../../services/book.service';
 import { Subscription } from 'rxjs';
@@ -6,12 +6,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDeletionComponent } from 'src/app/modals/confirm-deletion/confirm-deletion.component';
 
+
 @Component({
   selector: 'app-book',
   templateUrl: './book.component.html',
   styleUrls: ['./book.component.scss']
 })
-export class BookComponent implements OnInit {
+export class BookComponent implements OnInit, AfterViewChecked {
   private subs = new Subscription;
   book: Book;
   showShortDesciption = true
@@ -20,12 +21,17 @@ export class BookComponent implements OnInit {
     private route: ActivatedRoute,
     private bookService: BookService,
     private router: Router,
-    public dialog: MatDialog
+    public dialog: MatDialog,
   ) { }
+
+  mediaQuery$: Subscription;
+  activeMediaQuery: string;
 
   ngOnInit(): void {
     this.getBook()
-    if (window.screen.width === 425) { // 768px portrait
+  }
+  ngAfterViewChecked(): void {
+    if (window.screen.width === 425) {
       this.mobile = true;
     }
   }
