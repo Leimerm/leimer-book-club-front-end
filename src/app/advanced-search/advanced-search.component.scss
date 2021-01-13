@@ -6,7 +6,7 @@ mat-panel-title {
 
 mat-expansion-panel-header {
   background-color: lightgreen;
-  height: 43px;
+  height: 55px;
 }
 
 mat-expansion-panel {
@@ -91,8 +91,6 @@ button {
   font-size: 2.25vh;
   height: 80px;
   line-height: 1.5;
-  // overflow: hidden;
-  // text-overflow: ellipsis;
 }
 
 mat-radio-button {
@@ -209,7 +207,7 @@ mat-radio-button {
 }
 
 @media screen and (min-width: 1700px) {
-  #header-mobile {
+  #search-header-mobile {
     height: 60px;
   }
 }

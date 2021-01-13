@@ -3,30 +3,30 @@
   <div id="id-sub-create-hold" class="sub-create-hold">
     <mat-card id="create-card" class="card">
       <mat-card-content style="font-size: 2.25vh">
-        <form style="display: flex; flex-direction: column;" class="example-form">
+        <form style="display: flex; flex-direction: column;" class="example-form" [formGroup]="newUserInfo">
           <mat-form-field class="example-full-width">
             <mat-label>User Name</mat-label>
-            <input matInput placeholder="" formControlName="title">
+            <input matInput placeholder="" formControlName="user_name">
           </mat-form-field>
           <mat-form-field class="example-full-width">
               <mat-label>Email</mat-label>
-              <input matInput placeholder="" formControlName="author">
+              <input matInput placeholder="" formControlName="email">
           </mat-form-field>
           <mat-form-field class="example-full-width">
               <mat-label>Password</mat-label>
-              <input matInput placeholder="" formControlName="author">
+              <input matInput placeholder="" formControlName="password">
           </mat-form-field>
           <mat-form-field class="example-full-width">
             <mat-label>Password Confirmation</mat-label>
-              <input matInput placeholder="" formControlName="author">
+              <input matInput placeholder="" formControlName="password_confirmation">
           </mat-form-field>
         </form>
       </mat-card-content>
     </mat-card>
     <br>
     <div class="btn-hold">
-      <button class="mobile-btn"mat-raised-button>Submit</button>
-      <button class="mobile-btn btn2"mat-raised-button>Clear Form</button>
+      <button class="mobile-btn"mat-raised-button (click)="addNewUser()">Submit</button>
+      <button class="mobile-btn btn2"mat-raised-button (click)="clearUserInfo()">Clear Form</button>
     </div>
   </div>
 
