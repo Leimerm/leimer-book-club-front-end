@@ -3,8 +3,11 @@
     <mat-toolbar class="example-toolbar">
       <mat-icon id="id-mobile"(click)="snav.toggle()">menu</mat-icon>
       <div id="title" class="nav-title">Book Club</div>
-      <div style="width: 100%; display: flex; justify-content: flex-end;">
+      <div *ngIf="login===false" style="width: 100%; display: flex; justify-content: flex-end;">
         <div class="log" (click)="openDialog()">Login</div>
+      </div>
+      <div *ngIf="login===true" style="width: 100%; display: flex; justify-content: flex-end;">
+        <div class="log">Welcome User</div>
       </div>
     </mat-toolbar>
     <mat-sidenav-container class="example-sidenav-container"
@@ -15,6 +18,9 @@
           <h2 style="padding-top: 6%;"><a routerLink="book-list">View Library</a></h2>
           <h2><a routerLink="add-book">Add Book</a></h2>
           <h2><a routerLink="reading-list">My Reading List</a></h2>
+          <div *ngIf="login===true">
+            <h2><a>Edit Profile</a></h2>
+          </div>
         </mat-nav-list>
       </mat-sidenav>
       <mat-sidenav-content>

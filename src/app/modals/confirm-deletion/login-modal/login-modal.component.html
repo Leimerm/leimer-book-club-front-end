@@ -13,7 +13,7 @@
     <a style="font-size: 2vh; text-decoration: none;" href="create-account" (click)="closeLoginModal()">Create New Account</a>
   </div>
   <div mat-dialog-actions style="display: flex; justify-content: space-between;">
-    <button mat-raised-button mat-dialog-close>Login</button>
+    <button mat-raised-button mat-dialog-close (click)="onLogin()">Login</button>
     <button mat-raised-button mat-dialog-close>Close</button>
   </div>
   <br>

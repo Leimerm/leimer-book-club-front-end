@@ -12,14 +12,14 @@
         </div>
         <h4>Rating: <span style="font-weight: normal;">{{book.rating}}/5</span></h4>
         <div>
-          <h4>Alturnative Cover Art:</h4>
+          <h4>Alternative Cover Art:</h4>
           <div id="alt-img-hold-mobile" class="alt-img-hold"*ngIf="book.alt_cover1" style="display: flex;" >
             <img id="alt-img1" class="alt-img" src={{book.alt_cover1}}>
             <img id="alt-img2" class="alt-img" src={{book.alt_cover2}}>
             <img id="alt-img3" class="alt-img" src={{book.alt_cover3}}>
           </div>
           <div *ngIf="!book.alt_cover1" style="display: flex; flex-wrap: wrap;" >
-            <h4 style="font-weight: normal;">(No Alturnative Cover Avaible)</h4>
+            <h4 style="font-weight: normal;">(No Alternative Cover Art Avaible)</h4>
           </div>
         </div>
     </div>
