@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { UserService } from 'src/app/services/user.service';
 
@@ -14,6 +15,11 @@ export class LoginModalComponent implements OnInit {
     public dialModalRef: MatDialogRef<any>,
     private dialogRef: MatDialog
   ) { }
+
+  LogInfo: FormGroup = new FormGroup({
+    user_name: new FormControl("", [Validators.required]),
+    password: new FormControl("", [Validators.required]),
+  });
 
   changePosition() {
     this.dialModalRef.updatePosition({ top: '9vh', right: '2vw' });

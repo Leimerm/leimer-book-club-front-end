@@ -4,6 +4,7 @@ import { AddBookComponent } from './add-book/add-book.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookComponent } from './book-list/book/book.component';
 import { EditBookComponent } from './book-list/edit-book/edit-book.component';
+import { WriteReveiwComponent } from './book-list/write-reveiw/write-reveiw.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { ReadingListComponent } from './reading-list/reading-list.component';
 
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path:  'reading-list', component: ReadingListComponent},
   { path:  'edit-book/:id', component: EditBookComponent},
   { path:  'create-account', component: CreateAccountComponent},
+  { path:  'write-reveiw', component: WriteReveiwComponent}
 
 ];
 

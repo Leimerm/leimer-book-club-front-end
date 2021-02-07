@@ -32,6 +32,7 @@ import { EditBookComponent } from './book-list/edit-book/edit-book.component';
 import { ConfirmDeletionComponent } from './modals/confirm-deletion/confirm-deletion.component';
 import { LoginModalComponent } from './modals/confirm-deletion/login-modal/login-modal.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
+import { WriteReveiwComponent } from './book-list/write-reveiw/write-reveiw.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { CreateAccountComponent } from './create-account/create-account.componen
     EditBookComponent,
     ConfirmDeletionComponent,
     LoginModalComponent,
-    CreateAccountComponent
+    CreateAccountComponent,
+    WriteReveiwComponent
   ],
   imports: [
     BrowserModule,

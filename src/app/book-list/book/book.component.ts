@@ -60,5 +60,9 @@ export class BookComponent implements OnInit, AfterViewChecked {
     this.router.navigate([`/edit-book/${id}`])
   }
 
+  routeToWriteReveiw() {
+    this.router.navigate([`/write-reveiw`])
+  }
+
 }
 
